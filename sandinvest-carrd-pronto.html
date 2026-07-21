@@ -1,0 +1,725 @@
+<!-- 
+  SANDINVEST - Página de Captura de Leads
+  Versão pronta para Carrd.co
+
+  INSTRUÇÕES DE PUBLICAÇÃO:
+  1. Acesse carrd.co e crie uma conta
+  2. Clique em "New Site" → escolha template "Blank"
+  3. Clique no botão "+" para adicionar elemento
+  4. Escolha "Embed" (ícone de código </>)
+  5. Cole TODO este código abaixo
+  6. Clique em "Done" e depois "Publish"
+  7. Escolha um subdomínio gratuito (ex: sandinvest)
+  8. Pronto! O link será: sandinvest.carrd.co
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --sand-primary: #1E3A5F;
+    --sand-secondary: #2D5F8B;
+    --sand-accent: #4A9B5E;
+    --sand-light: #E8F0F8;
+    --sand-dark: #0F1D2E;
+    --sand-text: #1A2B3C;
+    --sand-muted: #5A6B7C;
+    --sand-border: #C8D6E5;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #F0F4F8 0%, #E8F0F8 50%, #F5F8FC 100%);
+    color: var(--sand-text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  .sn-header {
+    background: linear-gradient(135deg, var(--sand-dark) 0%, var(--sand-primary) 100%);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(15, 29, 46, 0.3);
+  }
+
+  .sn-header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .sn-header-logo img {
+    height: 50px;
+    width: auto;
+  }
+
+  .sn-header-text { text-align: left; }
+  .sn-header-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: 3px;
+    line-height: 1.2;
+  }
+  .sn-header-text span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .sn-hero {
+    padding: 50px 20px 35px;
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .sn-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--sand-light) 0%, #D4E5F7 100%);
+    color: var(--sand-primary);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    border: 1px solid var(--sand-border);
+  }
+  .sn-hero-badge i { color: var(--sand-accent); }
+
+  .sn-hero h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--sand-dark);
+    margin-bottom: 16px;
+    line-height: 1.25;
+  }
+  .sn-hero h2 span {
+    background: linear-gradient(135deg, var(--sand-secondary), var(--sand-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .sn-hero p {
+    font-size: 16px;
+    color: var(--sand-muted);
+    max-width: 500px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+  }
+
+  .sn-trust {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+  }
+  .sn-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--sand-muted);
+    font-weight: 500;
+    background: var(--white);
+    padding: 8px 16px;
+    border-radius: 50px;
+    box-shadow: 0 2px 10px rgba(30, 58, 95, 0.08);
+    border: 1px solid var(--sand-border);
+  }
+  .sn-trust-item i { color: var(--sand-accent); font-size: 13px; }
+
+  .sn-form-box {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 35px 25px;
+    max-width: 520px;
+    margin: 0 auto 40px;
+    box-shadow: 0 8px 30px rgba(30, 58, 95, 0.12);
+    border: 1px solid var(--sand-border);
+    position: relative;
+    overflow: hidden;
+  }
+  .sn-form-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--sand-primary), var(--sand-secondary), var(--sand-accent));
+  }
+
+  .sn-form-head {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .sn-form-head-icon {
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, var(--sand-light) 0%, #D4E5F7 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+    border: 2px solid var(--sand-border);
+  }
+  .sn-form-head-icon i { font-size: 22px; color: var(--sand-secondary); }
+  .sn-form-head h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--sand-dark);
+    margin-bottom: 6px;
+  }
+  .sn-form-head p { font-size: 13px; color: var(--sand-muted); }
+
+  .sn-field { margin-bottom: 18px; }
+  .sn-field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--sand-dark);
+    margin-bottom: 6px;
+  }
+  .sn-field .req { color: #E74C3C; }
+  .sn-field .opt { font-weight: 400; color: var(--sand-muted); font-size: 11px; }
+  .sn-field input, .sn-field textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 2px solid var(--sand-border);
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    color: var(--sand-text);
+    background: var(--white);
+    transition: all 0.3s ease;
+  }
+  .sn-field input:focus, .sn-field textarea:focus {
+    outline: none;
+    border-color: var(--sand-secondary);
+    box-shadow: 0 0 0 3px rgba(45, 95, 139, 0.1);
+  }
+  .sn-field input::placeholder, .sn-field textarea::placeholder { color: #A0B0C0; }
+  .sn-field textarea { min-height: 100px; resize: vertical; }
+
+  .sn-radio-group, .sn-check-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .sn-radio, .sn-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 2px solid var(--sand-border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: var(--white);
+  }
+  .sn-radio:hover, .sn-check:hover {
+    border-color: var(--sand-secondary);
+    background: linear-gradient(135deg, #F5F8FC 0%, #E8F0F8 100%);
+  }
+  .sn-radio input, .sn-check input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--sand-secondary);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .sn-radio label, .sn-check label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--sand-text);
+    cursor: pointer;
+    margin: 0;
+    flex: 1;
+  }
+  .sn-radio.on, .sn-check.on {
+    border-color: var(--sand-secondary);
+    background: linear-gradient(135deg, #F5F8FC 0%, #E8F0F8 100%);
+    box-shadow: 0 2px 8px rgba(45, 95, 139, 0.1);
+  }
+
+  .sn-submit {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--sand-primary) 0%, var(--sand-secondary) 50%, var(--sand-accent) 100%);
+    background-size: 200% 200%;
+    animation: snGrad 3s ease infinite;
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(30, 58, 95, 0.3);
+    margin-top: 8px;
+    letter-spacing: 0.5px;
+  }
+  @keyframes snGrad {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .sn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(30, 58, 95, 0.4);
+  }
+  .sn-submit i { margin-left: 6px; }
+
+  .sn-wa-alt {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--sand-border);
+  }
+  .sn-wa-alt p { font-size: 12px; color: var(--sand-muted); margin-bottom: 10px; }
+  .sn-wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 11px 22px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  }
+  .sn-wa-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); }
+
+  .sn-success {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .sn-success-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--sand-light) 0%, #D4E5F7 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border: 3px solid var(--sand-accent);
+    animation: snPulse 2s infinite;
+  }
+  @keyframes snPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+  .sn-success-icon i { font-size: 30px; color: var(--sand-accent); }
+  .sn-success h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--sand-dark);
+    margin-bottom: 10px;
+  }
+  .sn-success p { font-size: 14px; color: var(--sand-muted); margin-bottom: 25px; }
+
+  .sn-stats {
+    background: linear-gradient(135deg, var(--sand-dark) 0%, var(--sand-primary) 100%);
+    padding: 45px 20px;
+    margin-bottom: 40px;
+  }
+  .sn-stats-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .sn-stat { text-align: center; color: var(--white); }
+  .sn-stat-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--white), var(--sand-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .sn-stat-label { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 4px; font-weight: 500; }
+
+  .sn-benefits {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+  }
+  .sn-benefits-head { text-align: center; margin-bottom: 25px; }
+  .sn-benefits-head h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--sand-dark);
+    margin-bottom: 6px;
+  }
+  .sn-benefits-head p { font-size: 13px; color: var(--sand-muted); }
+
+  .sn-benefit-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .sn-benefit-card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    box-shadow: 0 2px 10px rgba(30, 58, 95, 0.08);
+    border: 1px solid var(--sand-border);
+    transition: all 0.3s ease;
+  }
+  .sn-benefit-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(30, 58, 95, 0.12);
+    border-color: var(--sand-secondary);
+  }
+  .sn-benefit-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--sand-light) 0%, #D4E5F7 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid var(--sand-border);
+  }
+  .sn-benefit-icon i { font-size: 18px; color: var(--sand-secondary); }
+  .sn-benefit-card h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--sand-dark);
+    margin-bottom: 4px;
+  }
+  .sn-benefit-card p { font-size: 12px; color: var(--sand-muted); line-height: 1.5; }
+
+  .sn-footer {
+    text-align: center;
+    padding: 35px 20px;
+    background: linear-gradient(135deg, var(--sand-dark) 0%, #0A1520 100%);
+    color: rgba(255,255,255,0.5);
+    font-size: 12px;
+  }
+  .sn-footer p { margin-bottom: 6px; }
+  .sn-footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .sn-footer-social a {
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 14px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  .sn-footer-social a:hover { background: var(--sand-accent); transform: translateY(-2px); }
+
+  @media (min-width: 480px) {
+    .sn-hero h2 { font-size: 40px; }
+    .sn-form-box { padding: 40px 40px; }
+    .sn-benefit-cards { grid-template-columns: 1fr 1fr; }
+    .sn-stats-inner { gap: 50px; }
+  }
+  @media (min-width: 768px) {
+    .sn-hero h2 { font-size: 46px; }
+  }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- HEADER -->
+<div class="sn-header">
+  <div class="sn-header-logo">
+    <!-- SUBSTITUA ESTE LINK PELO SEU LOGO -->
+    <!-- Para trocar: faça upload do logo no imgur.com e cole o link aqui -->
+    <img src="https://i.imgur.com/placeholder.png" alt="SandInvest Logo">
+    <div class="sn-header-text">
+      <h1>SANDINVEST</h1>
+      <span>Consultoria de Investimentos</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="sn-hero">
+  <div class="sn-hero-badge">
+    <i class="fas fa-chart-line"></i>
+    Consultoria de Investimentos
+  </div>
+  <h2>Transforme sua relação com o <span>dinheiro</span></h2>
+  <p>Sem julgamentos, sem termos complicados. Um olhar 360° para quem quer sair das dívidas e construir um futuro financeiro sólido.</p>
+
+  <div class="sn-trust">
+    <div class="sn-trust-item">
+      <i class="fas fa-shield-alt"></i>
+      <span>100% Confidencial</span>
+    </div>
+    <div class="sn-trust-item">
+      <i class="fas fa-heart"></i>
+      <span>Sem Julgamentos</span>
+    </div>
+    <div class="sn-trust-item">
+      <i class="fas fa-clock"></i>
+      <span>Resposta em 24h</span>
+    </div>
+  </div>
+</div>
+
+<!-- FORMULÁRIO -->
+<div class="sn-form-box" id="snFormBox">
+  <div class="sn-form-head">
+    <div class="sn-form-head-icon">
+      <i class="fas fa-clipboard-list"></i>
+    </div>
+    <h3>Comece sua jornada</h3>
+    <p>Preencha abaixo e receba uma análise gratuita do seu perfil</p>
+  </div>
+
+  <form id="snLeadForm" action="https://formspree.io/f/meeyzvyw" method="POST">
+
+    <div class="sn-field">
+      <label for="snNome">Nome Completo <span class="req">*</span></label>
+      <input type="text" id="snNome" name="nome" placeholder="Como gostaria de ser chamado(a)?" required>
+    </div>
+
+    <div class="sn-field">
+      <label for="snEmail">E-mail <span class="req">*</span></label>
+      <input type="email" id="snEmail" name="email" placeholder="seu@email.com" required>
+    </div>
+
+    <div class="sn-field">
+      <label for="snTel">Telefone (WhatsApp) <span class="req">*</span></label>
+      <input type="tel" id="snTel" name="telefone" placeholder="(00) 00000-0000" required maxlength="15">
+    </div>
+
+    <div class="sn-field">
+      <label>Qual sua maior dificuldade hoje? <span class="req">*</span></label>
+      <div class="sn-check-group">
+        <div class="sn-check">
+          <input type="checkbox" id="snD1" name="dificuldade" value="Endividamento">
+          <label for="snD1">Estou endividado(a) e não sei por onde começar</label>
+        </div>
+        <div class="sn-check">
+          <input type="checkbox" id="snD2" name="dificuldade" value="Sem planejamento">
+          <label for="snD2">Não tenho controle do que entra e do que sai</label>
+        </div>
+        <div class="sn-check">
+          <input type="checkbox" id="snD3" name="dificuldade" value="Não investe">
+          <label for="snD3">Quero investir, mas não entendo nada do mercado</label>
+        </div>
+        <div class="sn-check">
+          <input type="checkbox" id="snD4" name="dificuldade" value="Sem metas">
+          <label for="snD4">Tenho metas, mas não consigo guardar dinheiro</label>
+        </div>
+        <div class="sn-check">
+          <input type="checkbox" id="snD5" name="dificuldade" value="Outro">
+          <label for="snD5">Outro (conta pra gente abaixo!)</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="sn-field">
+      <label>Quanto você tem conseguido poupar mensalmente? <span class="req">*</span></label>
+      <div class="sn-radio-group">
+        <div class="sn-radio">
+          <input type="radio" id="snP1" name="poupanca" value="Não consigo poupar" required>
+          <label for="snP1">Não estou conseguindo poupar no momento</label>
+        </div>
+        <div class="sn-radio">
+          <input type="radio" id="snP2" name="poupanca" value="Até R$ 300">
+          <label for="snP2">Até R$ 300,00</label>
+        </div>
+        <div class="sn-radio">
+          <input type="radio" id="snP3" name="poupanca" value="Até R$ 500">
+          <label for="snP3">Até R$ 500,00</label>
+        </div>
+        <div class="sn-radio">
+          <input type="radio" id="snP4" name="poupanca" value="R$ 500 a R$ 1000">
+          <label for="snP4">Entre R$ 500,00 e R$ 1.000,00</label>
+        </div>
+        <div class="sn-radio">
+          <input type="radio" id="snP5" name="poupanca" value="Acima de R$ 1000">
+          <label for="snP5">Acima de R$ 1.000,00</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="sn-field">
+      <label for="snObj">Conte um pouco sobre seus objetivos <span class="opt">(opcional)</span></label>
+      <textarea id="snObj" name="objetivos" placeholder="Ex.: Quero sair das dívidas do cartão, começar a investir para a aposentadoria, comprar minha casa própria, ou simplesmente entender meu dinheiro... Estou aqui para te ouvir! 💛"></textarea>
+    </div>
+
+    <button type="submit" class="sn-submit">
+      Quero transformar minha vida financeira <i class="fas fa-arrow-right"></i>
+    </button>
+  </form>
+
+  <div class="sn-wa-alt">
+    <p>Prefere conversar direto?</p>
+    <a href="https://wa.me/5511947313947" class="sn-wa-btn" target="_blank">
+      <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- MENSAGEM DE SUCESSO -->
+<div class="sn-success" id="snSuccess">
+  <div class="sn-success-icon">
+    <i class="fas fa-check"></i>
+  </div>
+  <h3>Recebemos sua mensagem!</h3>
+  <p>Em breve nossa equipe entrará em contato para agendar sua consulta gratuita.</p>
+  <a href="https://wa.me/5511947313947" class="sn-wa-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i> Falar no WhatsApp agora
+  </a>
+</div>
+
+<!-- ESTATÍSTICAS -->
+<div class="sn-stats">
+  <div class="sn-stats-inner">
+    <div class="sn-stat">
+      <div class="sn-stat-num">360°</div>
+      <div class="sn-stat-label">Visão Completa</div>
+    </div>
+    <div class="sn-stat">
+      <div class="sn-stat-num">100%</div>
+      <div class="sn-stat-label">Personalizado</div>
+    </div>
+    <div class="sn-stat">
+      <div class="sn-stat-num">0</div>
+      <div class="sn-stat-label">Julgamentos</div>
+    </div>
+  </div>
+</div>
+
+<!-- BENEFÍCIOS -->
+<div class="sn-benefits">
+  <div class="sn-benefits-head">
+    <h3>O que você vai encontrar na SandInvest</h3>
+    <p>Uma consultoria que entende que finanças são sobre pessoas</p>
+  </div>
+  <div class="sn-benefit-cards">
+    <div class="sn-benefit-card">
+      <div class="sn-benefit-icon">
+        <i class="fas fa-search-dollar"></i>
+      </div>
+      <div>
+        <h4>Diagnóstico Completo</h4>
+        <p>Análise 360° da sua vida financeira, sem deixar nada para trás.</p>
+      </div>
+    </div>
+    <div class="sn-benefit-card">
+      <div class="sn-benefit-icon">
+        <i class="fas fa-hand-holding-heart"></i>
+      </div>
+      <div>
+        <h4>Acolhimento Real</h4>
+        <p>Entendemos que finanças são emocionais. Você não está sozinho(a).</p>
+      </div>
+    </div>
+    <div class="sn-benefit-card">
+      <div class="sn-benefit-icon">
+        <i class="fas fa-route"></i>
+      </div>
+      <div>
+        <h4>Plano de Ação</h4>
+        <p>Caminho claro e realista para sair do vermelho e começar a crescer.</p>
+      </div>
+    </div>
+    <div class="sn-benefit-card">
+      <div class="sn-benefit-icon">
+        <i class="fas fa-graduation-cap"></i>
+      </div>
+      <div>
+        <h4>Educação Financeira</h4>
+        <p>Aprenda de verdade, com linguagem simples e exemplos do dia a dia.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="sn-footer">
+  <p>© 2026 SandInvest. Todos os direitos reservados.</p>
+  <p>Consultoria de Investimentos | CNPJ: XX.XXX.XXX/0001-XX</p>
+  <div class="sn-footer-social">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://wa.me/5511947313947"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
+
+<script>
+  // Máscara de telefone
+  document.getElementById('snTel').addEventListener('input', function(e) {
+    let v = e.target.value.replace(/\D/g, '');
+    if (v.length > 11) v = v.slice(0, 11);
+    if (v.length > 7) v = '(' + v.slice(0,2) + ') ' + v.slice(2,7) + '-' + v.slice(7);
+    else if (v.length > 2) v = '(' + v.slice(0,2) + ') ' + v.slice(2);
+    e.target.value = v;
+  });
+
+  // Radio selection
+  document.querySelectorAll('.sn-radio').forEach(opt => {
+    opt.addEventListener('click', function() {
+      const r = this.querySelector('input[type="radio"]');
+      const n = r.name;
+      document.querySelectorAll(`input[name="${n}"]`).forEach(x => x.closest('.sn-radio').classList.remove('on'));
+      r.checked = true;
+      this.classList.add('on');
+    });
+  });
+
+  // Checkbox selection
+  document.querySelectorAll('.sn-check').forEach(opt => {
+    opt.addEventListener('click', function(e) {
+      if (e.target.tagName !== 'INPUT') {
+        const c = this.querySelector('input[type="checkbox"]');
+        c.checked = !c.checked;
+      }
+      this.classList.toggle('on', this.querySelector('input').checked);
+    });
+  });
+
+  // Success message
+  document.getElementById('snLeadForm').addEventListener('submit', function(e) {
+    setTimeout(() => {
+      document.getElementById('snFormBox').style.display = 'none';
+      document.getElementById('snSuccess').style.display = 'block';
+      window.scrollTo({ top: 200, behavior: 'smooth' });
+    }, 500);
+  });
+</script>
